@@ -330,7 +330,7 @@ def reset(names : list[str], scores : list[list], value_init : any=0) -> None:
     print(RESET_OK)
 
 
-def data_alert(names_ok : bool, scores_ok : bool) -> None:
+def show_alert(names_ok : bool, scores_ok : bool) -> None:
     '''
     Description: Muestra por consola un alerta en caso de que no se haya efectuado la carga de datos de los participantes.\n
     Argument/s:
@@ -338,9 +338,13 @@ def data_alert(names_ok : bool, scores_ok : bool) -> None:
         scores_ok: booleano (True si los puntajes fueron cargados, caso contrario False).\n
     Return: No tiene.
     '''
+    alert = None
+
     if not names_ok and scores_ok:
-        print(NAMES_NOT_EXIST)
+        alert = NAMES_NOT_EXIST
     elif not scores_ok and names_ok:
-        print(SCORES_NOT_EXIST)
+        alert = SCORES_NOT_EXIST
     elif not (names_ok and scores_ok):
-        print(DATA_NOT_EXIST)
+        alert = DATA_NOT_EXIST
+
+    print(alert)

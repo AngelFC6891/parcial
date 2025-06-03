@@ -34,7 +34,7 @@ def execute():
                         print(SCORES_EXIST)
 
                 case 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10:
-                    data_alert(names_ok, scores_ok)
+                    show_alert(names_ok, scores_ok)
 
                 case 11:
                     if names_ok or scores_ok:
