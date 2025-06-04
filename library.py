@@ -114,17 +114,17 @@ def get_averages_parts(scores : list[list]) -> list[float]:
     return averages
 
 
-def get_averages_jurys(matrix : list[list]) -> list[float]:
+def get_averages_jurys(scores : list[list]) -> list[float]:
     '''
     Description: Calcula el promedio de los puntajes asignados de cada jurado y los almacena en un array unidimensional.\n
     Argument/s:
         scores: matriz de puntajes.\n
     Return: array unidimensional de flotates.
     '''
-    averages_jurys = create_array(len(matrix[0]))
+    averages_jurys = create_array(len(scores[0]))
 
-    for i in range(len(matrix[0])):
-        averages_jurys[i] = get_average(accumulate_col(matrix, i), len(matrix))
+    for i in range(len(scores[0])):
+        averages_jurys[i] = get_average(accumulate_col(scores, i), len(scores))
 
     return averages_jurys
 
